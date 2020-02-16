@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<nf:rpc-reply xmlns="http://www.cisco.com/nxos:1.0:ntp" xmlns:nf="urn:ietf:param
+s:xml:ns:netconf:base:1.0">
+ <nf:data>
+  <show>
+   <ntp>
+    <peer-status>
+     <__XML__OPT_Cmd_show_ntp_peer_status___readonly__>
+      <__readonly__>
+       <totalpeers>Total peers : 2</totalpeers>
+       <TABLE_peersstatus>
+        <ROW_peersstatus>
+         <syncmode>=</syncmode>
+         <remote>10.0.0.101</remote>
+         <local>0.0.0.0</local>
+         <st>16</st>
+         <poll>64</poll>
+         <reach>0</reach>
+         <delay>0.00000</delay>
+         <vrf>default</vrf>
+        </ROW_peersstatus>
+        <ROW_peersstatus>
+         <syncmode>=</syncmode>
+         <remote>2001:db8:777::101</remote>
+         <local>::</local>
+         <st>16</st>
+         <poll>64</poll>
+         <reach>0</reach>
+         <delay>0.00000</delay>
+         <vrf>default</vrf>
+        </ROW_peersstatus>
+       </TABLE_peersstatus>
+      </__readonly__>
+     </__XML__OPT_Cmd_show_ntp_peer_status___readonly__>
+    </peer-status>
+   </ntp>
+  </show>
+ </nf:data>
+</nf:rpc-reply>
