@@ -1,0 +1,16 @@
+module project_types {
+  yang-version 1.1;
+  namespace 'http://sjn.network/ns/project_types';
+  prefix sjn_pt;
+  
+  typedef project_type {
+    type enumeration {
+	  enum "internal" {
+	    description "An internal project; team facing.";
+	  }
+	  enum external {
+	    description "An external project; customer facing.";
+	  }
+	}
+  }
+}

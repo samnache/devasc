@@ -1,0 +1,71 @@
+module network_automation {
+  yang-version 1.1;
+  namespace 'http://sjn.network/ns/network_automation';
+  prefix sjn_na;
+  
+  import project_types {
+    prefix sjn_pt;
+  }
+  
+  grouping owner {
+  	leaf owner {
+	  type leafref {
+		path /network_automation_engineers/network_automation_engineer/username;
+	  }
+	}
+  }
+  
+  typedef name {
+    type string {
+	  pattern '^[A-Z][a-z0-9_-]{1,19}$';
+	}
+  }
+  
+  container network_automation_engineers {
+    list network_automation_engineer {
+      key username;
+	
+	  leaf username {
+	    type string;
+	  }
+	  
+	  leaf first_name {
+	    type name;
+	  }
+	  
+	  leaf last_name {
+	    type name;
+	  }
+	  
+	  leaf-list nickname {
+	    type string;
+	  }
+    }
+  }
+
+  container network_automation_projects {
+    list network_automation_project {
+      key project_name;
+	
+	  leaf project_name {
+	    type string;
+	  }
+	  
+	  leaf project_type {
+	    type sjn_pt:project_type;
+	  }
+	  uses owner;
+    }
+  }
+
+  container repos {
+    list repo {
+      key repo_name;
+	
+	  leaf repo_name {
+	    type string;
+	  }
+	  uses owner;
+    }
+  }
+}
